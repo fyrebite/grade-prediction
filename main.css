@@ -39,9 +39,9 @@ button:hover, button:active{
 h1{
 	font-family: "Playfair Display", sans-serif;
 	font-size: 4rem;
-	padding-bottom: 40px;
+	padding-bottom: 60px;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-	line-height: 1.6;
+	line-height: 0.9;
 }
 
 form{
