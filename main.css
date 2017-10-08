@@ -1,26 +1,53 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 }
 
-body{
-	font-family: "Fauna One", sans-serif;
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: sans-serif;
 	line-height: 1.5;
 }
 
-input[type="text"]{
+header, section, footer, aside, nav, main, article, figure {
+    display: block; 
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	word-wrap: break-word;
+}
+
+input[type="text"], input[type="password"], textarea {
 	outline: none;
 	border: none;
 	font-size: 1rem;
 	font-family: inherit;
-	margin-left: 10px;
+	border-radius: 0;
 }
 
-button{
+button {
 	border-radius: 0;
 	border: none;
 	cursor: pointer;
+	background: none;
 	font-size: 1rem;
+	box-sizing: content-box;
+}
+
+body {
+	font-family: "Fauna One", sans-serif;
+}
+
+input[type="text"] {
+	margin-left: 10px;
+}
+
+button {
 	background: #111;
 	border-bottom: 3px solid #000;
 	color: #fff;
@@ -32,11 +59,11 @@ button{
 	text-transform: lowercase;
 }
 
-button:hover, button:active{
+button:hover, button:active {
 	background: #333;
 }
 
-h1{
+h1 {
 	font-family: "Playfair Display", sans-serif;
 	font-size: 4rem;
 	padding-bottom: 60px;
@@ -44,66 +71,64 @@ h1{
 	line-height: 0.9;
 }
 
-form{
+form {
 	margin-top: 50px;
 }
 
-p{
+p {
 	color: rgba(0, 0, 0, 0.52);
 	font-size: 0.83rem;
 	margin: 10px 0;
 }
 
-label{
+label {
 	line-height: 35px;
 	font-weight: bold;
 	width: 210px;
 	text-align: right;
 }
 
-label, input[type="text"]{
+label, input[type="text"] {
 	display: inline-block;
 	height: 35px;
 }
 
-input[type="text"]::placeholder{ color: rgba(0, 0, 0, 0.2); }
-input[type="text"]:focus{ color: #3498db; }
-input[type="text"]:focus::placeholder{ color: #2980b9; }
+input[type="text"]::placeholder { color: rgba(0, 0, 0, 0.2); }
+input[type="text"]:focus { color: #3498db; }
+input[type="text"]:focus::placeholder { color: #2980b9; }
 
-span{
+span {
 	line-height: 2;
 }
 
-.container{
+.container {
 	width: 80%;
 	margin: 100px auto;
 }
 
-#results{
+#results {
 	border-top: 2px solid rgba(0, 0, 0, 0.1);
 	margin-top: 50px;
 	padding-top: 50px;
 	display: none;
 }
 
-
-
-@media only screen and (max-width: 768px){
-	h1{
+@media only screen and (max-width: 768px) {
+	h1 {
 		font-size: 2.5rem;
 	}
 
-	label, input[type="text"]{
+	label, input[type="text"] {
 		display: block;
 		width: 100%;
 		margin: 0;
 	}
 
-	label{
+	label {
 		text-align: left;
 	}
 
-	button{
+	button {
 		width: 100%;
 	}
 }
