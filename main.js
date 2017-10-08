@@ -1,6 +1,7 @@
 var aims = [], modules = [];
 var grades = ["First", "2:1", "2:2", "Third"];
 var results = document.getElementById("results");
+var btnCalculate = document.getElementById("btn-calculate");
 var average = 0;
 var prediction;
 
@@ -19,7 +20,7 @@ function Module(e, c){
 	};
 
 	modules.push(this);
-};
+}
 
 function findAverage(arr){
 	var total = 0;
@@ -34,8 +35,8 @@ function calculate(num){
 
 	var professionalContext = new Module("professional-context", 20);
 	var designResearchStudy = new Module("design-research-study", 40);
-
 	var milestone = isNaN(num) ? 70 : num;
+
 	if(milestone === 70){
 		aims = [];
 	}
@@ -55,7 +56,7 @@ function calculate(num){
 			outputResults();
 		}
 	}
-};
+}
 
 function outputResults(){
 	results.style.display = "block";
@@ -63,16 +64,16 @@ function outputResults(){
 	
 	for(var i = 0; i < aims.length; i++){
 		if(aims[i] <= 100){
-			results.innerHTML += "<span>You need <strong>" + aims[i] + "</strong> in Final Major Project to get a <strong>" + grades[i] + "</strong></span><br>";
+			results.innerHTML += "<span>You need <strong>" + aims[i] + "</strong> in Final Major Project to get a <strong>" + grades[i] + "</strong>.</span><br>";
 		} else {
-			results.innerHTML += "<span>You <strong>cannot</strong> achieve a <strong>" + grades[i] + "</strong></span><br>";
+			results.innerHTML += "<span>You <strong>cannot</strong> achieve a <strong>" + grades[i] + "</strong>.</span><br>";
 		}
 	}
 
 	if(aims.length !== grades.length){
 		var diff = grades.length - aims.length;
 		var idx = grades.length - diff;
-		results.innerHTML += "<span>Providing you pass, you are <strong>guarenteed</strong> a " + grades[idx] + "</span><br>";
+		results.innerHTML += "<span>Providing you pass, you are <strong>guarenteed</strong> a " + grades[idx] + ".</span><br>";
 	}
 
 	if(average < 40){
@@ -87,9 +88,8 @@ function outputResults(){
 		prediction = "First";
 	}
 
-	results.innerHTML += "<br><span>Your average grade is <strong>" + average + "</strong></span><br>";
-	results.innerHTML += "<span>You are predicted a <strong>" + prediction + "</strong></span>";
+	results.innerHTML += "<br><span>Your average grade is <strong>" + average + "</strong>.</span><br>";
+	results.innerHTML += "<span>You are predicted a <strong>" + prediction + "</strong>.</span>";
 }
 
-var btnCalculate = document.getElementById("btn-calculate");
 btnCalculate.addEventListener("click", calculate, false);
