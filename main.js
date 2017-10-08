@@ -1,10 +1,9 @@
-var aims = [];
+var aims = [], modules = [];
 var grades = ["First", "2:1", "2:2", "Third"];
 var results = document.getElementById("results");
 var average = 0;
 var prediction;
 
-var modules = [];
 function Module(e, c){
 	var _this = this;
 
@@ -12,11 +11,7 @@ function Module(e, c){
 
 	this.grade = function(){
 		var val = document.getElementById(e).value;
-		if(!isNaN(val)){
-			return parseInt(val);
-		} else {
-			return 0;
-		}
+		return isNaN(val) ? 0 : parseInt(val);
 	};
 
 	this.percent = function(){
@@ -24,11 +19,9 @@ function Module(e, c){
 	};
 
 	modules.push(this);
-	
 };
 
 function findAverage(arr){
-	console.log(arr);
 	var total = 0;
 	for(var i = 0; i < arr.length; i++){
 		total += arr[i].grade();
@@ -37,13 +30,11 @@ function findAverage(arr){
 }
 
 function calculate(num){
-
 	modules = [];
 
 	var professionalContext = new Module("professional-context", 20);
 	var designResearchStudy = new Module("design-research-study", 40);
 
-	//reset for recursion
 	var milestone = isNaN(num) ? 70 : num;
 	if(milestone === 70){
 		aims = [];
@@ -64,13 +55,12 @@ function calculate(num){
 			outputResults();
 		}
 	}
-
 };
 
 function outputResults(){
-
 	results.style.display = "block";
 	results.innerHTML = "";
+	
 	for(var i = 0; i < aims.length; i++){
 		if(aims[i] <= 100){
 			results.innerHTML += "<span>You need <strong>" + aims[i] + "</strong> in Final Major Project to get a <strong>" + grades[i] + "</strong></span><br>";
