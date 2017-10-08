@@ -1,3 +1,4 @@
+/* CSS RESET */
 * {
 	margin: 0;
 	padding: 0;
@@ -37,48 +38,30 @@ button {
 	background: none;
 	font-size: 1rem;
 	box-sizing: content-box;
+	font-family: inherit;
 }
+/* END CSS RESET */
 
 body {
 	font-family: "Fauna One", sans-serif;
 }
 
-input[type="text"] {
-	margin-left: 10px;
-}
-
-button {
-	background: #111;
-	border-bottom: 3px solid #000;
-	color: #fff;
-	height: 50px;
-	margin-top: 20px;
-	width: 200px;
-	font-family: inherit;
-	font-weight: bold;
-	text-transform: lowercase;
-}
-
-button:hover, button:active {
-	background: #333;
-}
-
 h1 {
 	font-family: "Playfair Display", sans-serif;
 	font-size: 4rem;
-	padding-bottom: 60px;
+	padding-bottom: 50px;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 	line-height: 0.9;
-}
-
-form {
-	margin-top: 50px;
 }
 
 p {
 	color: rgba(0, 0, 0, 0.52);
 	font-size: 0.83rem;
 	margin: 10px 0;
+}
+
+form {
+	margin-top: 50px;
 }
 
 label {
@@ -93,9 +76,31 @@ label, input[type="text"] {
 	height: 35px;
 }
 
-input[type="text"]::placeholder { color: rgba(0, 0, 0, 0.2); }
-input[type="text"]:focus { color: #3498db; }
-input[type="text"]:focus::placeholder { color: #2980b9; }
+input[type="text"] {
+	margin-left: 10px;
+}
+
+input[type="text"]::placeholder { 
+	color: rgba(0, 0, 0, 0.2); 
+}
+
+input[type="text"]:focus, input[type="text"]:focus::placeholder { 
+	color: #3498db;
+}
+
+button {
+	background: #111;
+	color: #fff;
+	width: 200px;
+	height: 50px;
+	margin-top: 20px;
+	font-weight: bold;
+	text-transform: lowercase;
+}
+
+button:hover, button:active {
+	background: #333;
+}
 
 span {
 	line-height: 2;
@@ -116,6 +121,7 @@ span {
 @media only screen and (max-width: 768px) {
 	h1 {
 		font-size: 2.5rem;
+		line-height: 1.3;
 	}
 
 	label, input[type="text"] {
