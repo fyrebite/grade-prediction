@@ -1,17 +1,19 @@
-var aims = [], modules = [];
-var grades = ["First", "2:1", "2:2", "Third"];
-var results = document.getElementById("results");
-var btnCalculate = document.getElementById("btn-calculate");
-var average = 0;
-var prediction;
+const grades = ["First", "2:1", "2:2", "Third"];
+
+const results = document.getElementById("results");
+const btnCalculate = document.getElementById("btn-calculate");
+
+let aims = [], modules = [];
+let average = 0;
+let prediction;
 
 function Module(e, c) {
-    var _this = this;
+    let _this = this;
 
     this.credits = c;
 
     this.grade = function () {
-        var val = document.getElementById(e).value;
+        let val = document.getElementById(e).value;
         return isNaN(val) ? 0 : parseInt(val);
     };
 
@@ -23,19 +25,21 @@ function Module(e, c) {
 }
 
 function findAverage(arr) {
-    var total = 0;
-    for (var i = 0; i < arr.length; i++) {
+    let total = 0;
+
+    for (let i = 0; i < arr.length; i++) {
         total += arr[i].grade();
     }
+
     return total / arr.length;
 }
 
 function calculate(num) {
     modules = [];
 
-    var professionalContext = new Module("professional-context", 20);
-    var designResearchStudy = new Module("design-research-study", 40);
-    var milestone = isNaN(num) ? 70 : num;
+    let professionalContext = new Module("professional-context", 20);
+    let designResearchStudy = new Module("design-research-study", 40);
+    let milestone = isNaN(num) ? 70 : num;
 
     if (milestone === 70) {
         aims = [];
@@ -43,7 +47,7 @@ function calculate(num) {
 
     average = findAverage(modules);
 
-    var totalNeeded = (milestone - (professionalContext.percent() + designResearchStudy.percent())) * 2;
+    let totalNeeded = (milestone - (professionalContext.percent() + designResearchStudy.percent())) * 2;
 
     if (totalNeeded >= 40) {
         aims.push(totalNeeded);
@@ -62,7 +66,7 @@ function outputResults() {
     results.style.display = "block";
     results.innerHTML = "";
 
-    for (var i = 0; i < aims.length; i++) {
+    for (let i = 0; i < aims.length; i++) {
         if (aims[i] <= 100) {
             results.innerHTML += "<span>You need <strong>" + aims[i] + "</strong> in Final Major Project to get a <strong>" + grades[i] + "</strong>.</span><br>";
         } else {
@@ -71,8 +75,8 @@ function outputResults() {
     }
 
     if (aims.length !== grades.length) {
-        var diff = grades.length - aims.length;
-        var idx = grades.length - diff;
+        let diff = grades.length - aims.length;
+        let idx = grades.length - diff;
         results.innerHTML += "<span>Providing you pass, you are <strong>guarenteed</strong> a " + grades[idx] + ".</span><br>";
     }
 
