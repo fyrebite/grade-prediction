@@ -8,11 +8,6 @@ html {
     font-size: 16px;
 }
 
-body {
-    font-family: sans-serif;
-    line-height: 1.5;
-}
-
 header, section, footer, aside, nav, main, article, figure {
     display: block;
 }
@@ -23,7 +18,7 @@ a {
     word-wrap: break-word;
 }
 
-input[type="text"], input[type="password"], textarea {
+input[type="text"] {
     outline: none;
     border: none;
     font-size: 1rem;
@@ -34,7 +29,6 @@ input[type="text"], input[type="password"], textarea {
 button {
     border-radius: 0;
     border: none;
-    cursor: pointer;
     background: none;
     font-size: 1rem;
     box-sizing: content-box;
@@ -43,7 +37,9 @@ button {
 /* END CSS RESET */
 
 body {
+    line-height: 1.5;
     font-family: "Fauna One", sans-serif;
+    padding: 10%;
 }
 
 h1 {
@@ -58,6 +54,10 @@ p {
     color: rgba(0, 0, 0, 0.52);
     font-size: 0.83rem;
     margin: 10px 0;
+}
+
+main {
+    margin-top: 5%;
 }
 
 form {
@@ -104,11 +104,6 @@ button:hover, button:active {
 
 span {
     line-height: 2;
-}
-
-.container {
-    width: 80%;
-    margin: 100px auto;
 }
 
 #results {
